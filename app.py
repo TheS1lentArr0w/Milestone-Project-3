@@ -7,6 +7,8 @@ Milestone Project 3
 
 ### Imports
 import requests
+import smtplib
+import getpass
 
 ### Functions
 def get_reddit(subreddit,listing,limit,timeframe,user_agent):
@@ -40,8 +42,35 @@ def get_post_titles(r,title_condition):
     return posts,links
 
 def send_email(posts,links):
-    # outlook: smtp-mail.outlook.com
-    pass
+    """
+    Template of sending an email from Udemy course
+    """
+    smtp_object = smtplib.SMTP('smtp-mail.outlook.com',587)
+    smtp_object.ehlo()
+    smtp_object.starttls()
+    email = input("Enter your email: ")
+    password = getpass.getpass("Enter your password: ")
+    smtp_object.login(email,password)
+    
+    from_address = email
+    to_address = email
+    subject = "Giveaway Hunter Update"
+    # Creating message
+    message = "Today's links\n\n"
+    for i,post in enumerate(posts):
+        message += post
+        message += "\n"
+        message += links[i]
+        message += "\n\n"
+    message += "That's all!"
+
+    msg_parts = ("From: " + from_address,
+            "To: " + to_address,
+            "Subject: " + subject,
+            "", message)
+    msg = "\n".join(msg_parts)
+    smtp_object.sendmail(from_address,to_address,msg)
+    smtp_object.quit()
 
 ### Main
 # Declaring variables
@@ -50,16 +79,14 @@ limit = 100
 timeframe = "day"
 listing = "new"
 user_agent = "Giveaway Hunter v1.0 by /u/thes1lentarr0w : https://github.com/TheS1lentArr0w/Milestone-Project-3"
-title_condition = "custom"
+title_condition = "giveaway"
 
 # Post acquisition
 r = get_reddit(subreddit, listing, limit, timeframe, user_agent)
 posts,links = get_post_titles(r,title_condition)
-print(posts)
-print(links)
 
 # Send email if relevant posts discovered
-
+send_email(posts,links)
 
 """
 Reference links

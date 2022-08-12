@@ -11,6 +11,7 @@ Create bot that goes to [r/MechanicalKeyboards][r/mk] and checks all posts (e.g.
 When there is, send links to me in an email.
 
 ## Additional Functionality
+* Currently cannot be automated as email requires login. Need to find a way to automate this process.
 * Expand functionality to include [r/MechanicalKeyboardsUK][r/mkuk]
 
 ## Study Links
