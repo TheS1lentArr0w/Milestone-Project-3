@@ -86,7 +86,11 @@ r = get_reddit(subreddit, listing, limit, timeframe, user_agent)
 posts,links = get_post_titles(r,title_condition)
 
 # Send email if relevant posts discovered
-send_email(posts,links)
+if posts == [] or links == []:
+    # Didn't find any relevant posts
+    pass
+else:
+    send_email(posts,links)
 
 """
 Reference links
