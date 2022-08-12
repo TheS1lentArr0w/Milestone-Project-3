@@ -88,7 +88,7 @@ posts,links = get_post_titles(r,title_condition)
 # Send email if relevant posts discovered
 if posts == [] or links == []:
     # Didn't find any relevant posts
-    pass
+    print("Nothing today!")
 else:
     send_email(posts,links)
 
