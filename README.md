@@ -10,6 +10,9 @@ Create bot that goes to [r/MechanicalKeyboards][r/mk] and checks all posts (e.g.
 
 When there is, send links to me in an email.
 
+## Motivation
+Allows me to get an update every day to see if there are any new posts indicating a giveaway. Within the email, a link will be provided leading to the original post. This will allow me to make my comment and enter the giveaway.
+
 ## Additional Functionality
 * Currently cannot be automated as email requires login. Need to find a way to automate this process.
 * Expand functionality to include [r/MechanicalKeyboardsUK][r/mkuk]
