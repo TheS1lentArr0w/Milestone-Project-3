@@ -16,6 +16,9 @@ Allows me to get an update every day to see if there are any new posts indicatin
 ## Additional Functionality
 * Currently cannot be automated as email requires login. Need to find a way to automate this process.
 * Expand functionality to include [r/MechanicalKeyboardsUK][r/mkuk]
+* Turn it into a fullstack project by introducing a UI, having a way to store the emails in a database.
+  * Find a way to integrate multiple things into the UI (e.g. pick which subreddit to search, pick keywords, pick how often the check runs)
+* Emailchimp for managing emails
 
 ## Study Links
 * [Reddit API with Python Guide][reddit-api-with-python]
