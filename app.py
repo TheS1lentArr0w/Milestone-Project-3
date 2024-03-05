@@ -79,7 +79,7 @@ subreddit = "MechanicalKeyboards"
 limit = 100
 timeframe = "day"
 listing = "new"
-user_agent = "Giveaway Hunter v1.0 by /u/thes1lentarr0w : https://github.com/TheS1lentArr0w/Milestone-Project-3"
+user_agent = "Giveaway Hunter v1.1 by /u/thes1lentarr0w : https://github.com/TheS1lentArr0w/Milestone-Project-3"
 title_condition = "custom"
 
 # Post acquisition
