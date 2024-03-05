@@ -9,6 +9,7 @@ Milestone Project 3
 import requests
 import smtplib
 import getpass
+import config
 
 ### Functions
 def get_reddit(subreddit,listing,limit,timeframe,user_agent):
@@ -48,8 +49,8 @@ def send_email(posts,links):
     smtp_object = smtplib.SMTP('smtp-mail.outlook.com',587)
     smtp_object.ehlo()
     smtp_object.starttls()
-    email = input("Enter your email: ")
-    password = getpass.getpass("Enter your password: ")
+    email = config.configUser
+    password = config.configPass
     smtp_object.login(email,password)
     
     from_address = email
@@ -79,7 +80,7 @@ limit = 100
 timeframe = "day"
 listing = "new"
 user_agent = "Giveaway Hunter v1.0 by /u/thes1lentarr0w : https://github.com/TheS1lentArr0w/Milestone-Project-3"
-title_condition = "giveaway"
+title_condition = "custom"
 
 # Post acquisition
 r = get_reddit(subreddit, listing, limit, timeframe, user_agent)
